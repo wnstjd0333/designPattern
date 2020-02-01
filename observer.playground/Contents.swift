@@ -2,8 +2,6 @@ protocol Observer{
     func update(_ notifyValue: Int)
 }
 
-import Foundation
-
 class Junseong { //관찰자들이 보고있는 대상
     private var observers: [Observer] = [Observer]()
     private var value: Int = Int()
