@@ -25,7 +25,10 @@ func main(){
     
     firstInstance.setProperty()
     
-    print(secondInstance.getProperty())
+    if(firstInstance === secondInstance){
+        print(firstInstance.getProperty())
+
+    }
 }
 
 main()
