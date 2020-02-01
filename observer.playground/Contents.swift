@@ -23,7 +23,7 @@ class Junseong { //관찰자들이 보고있는 대상
     }
     //옵저버 해제
     func detachObserver(_ observer: Observer){
-        observers.remove(at: 0)
+        observers.removeLast()
     }
     
     //옵저버 알림
