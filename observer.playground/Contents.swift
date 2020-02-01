@@ -2,7 +2,9 @@ protocol Observer{
     func update(_ notifyValue: Int)
 }
 
-class Junseong{ //관찰자들이 보고있는 대상
+import Foundation
+
+class Junseong { //관찰자들이 보고있는 대상
     private var observers: [Observer] = [Observer]()
     private var value: Int = Int()
     
@@ -21,6 +23,11 @@ class Junseong{ //관찰자들이 보고있는 대상
     func attatchObserver(_ observer: Observer){
         observers.append(observer)
     }
+    //옵저버 해제
+    func detachObserver(_ observer: Observer){
+        observers.remove(at: 0)
+    }
+    
     //옵저버 알림
     func notify(){
         for observer in observers{
@@ -30,11 +37,10 @@ class Junseong{ //관찰자들이 보고있는 대상
 }
 
 class Sumida: Observer{
-    private var junseong: Junseong = Junseong()
+    private var name: String = ""
     
-    init(_ junseong: Junseong){
-        self.junseong = junseong
-        self.junseong.attatchObserver(self)
+    init(name: String){
+        self.name = name
     }
     func update(_ notifyValue: Int) {
         print("스미다상이 준성 실력이 \(notifyValue) 으로 변경 된 것을 인식하였습니다.")
@@ -42,11 +48,10 @@ class Sumida: Observer{
 }
 
 class Jaeun: Observer{
-    private var junseong: Junseong = Junseong()
+    private var name: String = ""
     
-    init(_ junseong: Junseong){
-        self.junseong = junseong
-        self.junseong.attatchObserver(self)
+    init(name: String){
+        self.name = name
     }
     func update(_ notifyValue: Int) {
         print("재은상이 준성 실력이 \(notifyValue) 으로 변경 된 것을 인식 하였습니다.")
@@ -55,11 +60,17 @@ class Jaeun: Observer{
 
 func main(){
     let junseong = Junseong()
-    let _ = Jaeun(junseong)
-    let _ = Sumida(junseong)
+    let sumida = Sumida(name: "junseong")
+    let jaeun = Jaeun(name: "junseong")
+    junseong.attatchObserver(sumida)
+    junseong.attatchObserver(jaeun)
     
     junseong.number = 10
+    junseong.number = 60
     
+    junseong.detachObserver(sumida)
+    junseong.detachObserver(jaeun)
+    junseong.number = 10
     junseong.number = 60
 }
 
