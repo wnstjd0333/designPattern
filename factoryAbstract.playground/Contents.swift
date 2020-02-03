@@ -13,7 +13,7 @@ protocol Unit{
 }
 
 protocol Building {
-    func make(_ type: UnitType) -> Unit?
+    func createUnit(_ type: UnitType) -> Unit?
 }
 
 class Marine: Unit{
@@ -28,7 +28,7 @@ class Medic: Unit {
 }
 
 class TerranBuilding : Building {
-    func make(_ type: UnitType) -> Unit? {
+    func createUnit(_ type: UnitType) -> Unit? {
         switch type {
         case .marine:
             return Marine()
@@ -53,7 +53,7 @@ class Hydra: Unit{
 }
 
 class ZergBuilding : Building {
-    func make(_ type: UnitType) -> Unit? {
+    func createUnit(_ type: UnitType) -> Unit? {
         switch type {
         case .zergling:
             return Zergling()
@@ -78,7 +78,7 @@ class Dragon: Unit{
 }
 
 class ProtossBuilding: Building{
-    func make(_ type: UnitType) -> Unit? {
+    func createUnit(_ type: UnitType) -> Unit? {
         switch type {
         case .zealot:
             return Zealot()
@@ -95,7 +95,7 @@ class User {
     init(_ race: Race){
         self.race = race
     }
-    func buildBuilding() -> Building {
+    func createBuilding() -> Building {
         switch race {
         case .zerg:
             return ZergBuilding()
@@ -105,8 +105,8 @@ class User {
             return ProtossBuilding()
         }
     }
-    func make(_ unit: UnitType) -> Unit? {
-        return buildBuilding().make(unit)
+    func createUnit(_ unit: UnitType) -> Unit? {
+        return createBuilding().createUnit(unit)
     }
 }
 //연관된 혹은 의존성이 있는 객체의 그룹을 구체적인 클래스를 지정하지 않고 생성하기 위해 인터페이스를 제공
@@ -114,25 +114,25 @@ class User {
 //객체가 많아질수록 관리하기 어렵다.
 func main(){
     let user1 = User(.zerg)
-    let zergUnit1 = user1.buildBuilding().make(.zergling)
+    let zergUnit1 = user1.createBuilding().createUnit(.zergling)
     zergUnit1?.attack()
-    let zergUnit2 = user1.make(.hydra)
+    let zergUnit2 = user1.createUnit(.hydra)
     zergUnit2?.move()
     print("------------")
     
     let user2 = User(.protoss)
-    let protossUnit1 = user2.make(.zealot)
+    let protossUnit1 = user2.createUnit(.zealot)
     protossUnit1?.stop()
-    let protossUnit2 = user2.make(.dragon)
+    let protossUnit2 = user2.createUnit(.dragon)
     protossUnit2?.attack()
     print("------------")
     
     let user3 = User(.terran)
-    let terranUnit1 = user3.make(.marine)
+    let terranUnit1 = user3.createUnit(.marine)
     terranUnit1?.stop()
-    let terranUnit2 = user2.make(.hydra)
+    let terranUnit2 = user2.createUnit(.hydra)
     terranUnit2?.attack()
-    let terranUnit3 = user3.make(.zealot)
+    let terranUnit3 = user3.createUnit(.zealot)
     terranUnit3?.move()
 }
 main()
