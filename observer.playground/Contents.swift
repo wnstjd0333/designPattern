@@ -3,7 +3,7 @@ protocol Observer{
 }
 
 class Junseong { //관찰자들이 보고있는 대상
-    private var observers: [Observer] = [Observer]()
+    private var observers = [String : Observer]()
     private var value: Int = Int()
     
     // 변경을 되면 notify()를 호출
@@ -18,17 +18,18 @@ class Junseong { //관찰자들이 보고있는 대상
     }
     
     //옵저버 등록
-    func attatchObserver(_ observer: Observer){
-        observers.append(observer)
+    func attatchObserver(key: String, observer: Observer){
+        observers.updateValue(observer, forKey: key)
     }
     //옵저버 해제
-    func detachObserver(_ observer: Observer){
-        observers.removeLast()
+    func detachObserver(_ key: String){
+        observers.removeValue(forKey: key)
+        
     }
     
     //옵저버 알림
     func notify(){
-        for observer in observers{
+        for observer in observers.values {
             observer.update(number)
         }
     }
@@ -60,16 +61,16 @@ func main(){
     let junseong = Junseong()
     let sumida = Sumida(name: "junseong")
     let jaeun = Jaeun(name: "junseong")
-    junseong.attatchObserver(sumida)
-    junseong.attatchObserver(jaeun)
+    junseong.attatchObserver(key: "sumida", observer: sumida)
+    junseong.attatchObserver(key: "jaeun", observer: jaeun)
     
     junseong.number = 10
     junseong.number = 60
     
-    junseong.detachObserver(sumida)
-    junseong.detachObserver(jaeun)
-    junseong.number = 10
-    junseong.number = 60
+    junseong.detachObserver("sumida")
+    junseong.detachObserver("jaeun")
+    junseong.number = 30
+    junseong.number = 40
 }
 
 main()
