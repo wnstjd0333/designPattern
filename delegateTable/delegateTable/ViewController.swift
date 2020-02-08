@@ -8,8 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+class ViewController: UIViewController {
     @IBOutlet weak var TableViewMain: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +30,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         TableViewMain.dataSource = self
 
     }
-
-
 }
 
+extension ViewController : UITableViewDelegate {
+    
+}
+
+extension ViewController : UITableViewDataSource{
+    
+}
