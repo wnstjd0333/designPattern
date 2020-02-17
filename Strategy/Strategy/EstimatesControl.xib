@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EstimatesControl" customModule="Strategy" customModuleProvider="target">
+            <connections>
+                <outlet property="lblEstimatedTime" destination="oto-qv-Ye7" id="TxG-qV-UBQ"/>
+                <outlet property="lblVehicleFare" destination="Qv7-wR-wx7" id="nVa-vg-go0"/>
+                <outlet property="lblVehicleType" destination="AcG-Na-ado" id="FxV-f3-fKN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="unW-Ka-9vV">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="400"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnb-vX-z9v">
+                    <rect key="frame" x="108" y="24" width="83.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estimated Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDp-fQ-ou8">
+                    <rect key="frame" x="98" y="245" width="103.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Fare" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eU5-Ct-i1R">
+                    <rect key="frame" x="116.5" y="143.5" width="66" height="20.5"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="17"/>
+                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Premium Car" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcG-Na-ado">
+                    <rect key="frame" x="100" y="52" width="99" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qv7-wR-wx7">
+                    <rect key="frame" x="135" y="165" width="29" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1hr 15min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oto-qv-Ye7">
+                    <rect key="frame" x="112.5" y="273" width="74" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="eU5-Ct-i1R" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="4pt-Ya-WO8"/>
+                <constraint firstItem="oto-qv-Ye7" firstAttribute="top" secondItem="mDp-fQ-ou8" secondAttribute="bottom" constant="7.5" id="7Pd-s0-fSm"/>
+                <constraint firstItem="mDp-fQ-ou8" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="7aN-r0-VsA"/>
+                <constraint firstItem="BeN-j3-0yx" firstAttribute="trailing" secondItem="eU5-Ct-i1R" secondAttribute="trailing" constant="116.5" id="8xg-LG-9Sq"/>
+                <constraint firstItem="Qv7-wR-wx7" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="DLG-Uf-qgI"/>
+                <constraint firstItem="mDp-fQ-ou8" firstAttribute="top" secondItem="Qv7-wR-wx7" secondAttribute="bottom" constant="59" id="E57-JB-RjS"/>
+                <constraint firstItem="wnb-vX-z9v" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="OHQ-oM-Fz7"/>
+                <constraint firstItem="eU5-Ct-i1R" firstAttribute="leading" secondItem="BeN-j3-0yx" secondAttribute="leading" constant="116.5" id="Ovh-WA-dJr"/>
+                <constraint firstItem="Qv7-wR-wx7" firstAttribute="top" secondItem="eU5-Ct-i1R" secondAttribute="bottom" constant="1" id="R4T-Qh-TwJ"/>
+                <constraint firstItem="BeN-j3-0yx" firstAttribute="bottom" secondItem="oto-qv-Ye7" secondAttribute="bottom" constant="106" id="Teu-xk-aXi"/>
+                <constraint firstItem="AcG-Na-ado" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="a2G-ex-3N7"/>
+                <constraint firstItem="AcG-Na-ado" firstAttribute="top" secondItem="wnb-vX-z9v" secondAttribute="bottom" constant="7.5" id="pm3-JE-BBy"/>
+                <constraint firstItem="wnb-vX-z9v" firstAttribute="top" secondItem="BeN-j3-0yx" secondAttribute="top" constant="24" id="ryx-tk-DYz"/>
+                <constraint firstItem="oto-qv-Ye7" firstAttribute="centerX" secondItem="unW-Ka-9vV" secondAttribute="centerX" id="xF3-7i-XVt"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="BeN-j3-0yx"/>
+            <point key="canvasLocation" x="16.800000000000001" y="-340.92953523238384"/>
+        </view>
+    </objects>
+</document>
