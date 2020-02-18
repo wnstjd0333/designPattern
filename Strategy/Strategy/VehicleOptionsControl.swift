@@ -9,10 +9,10 @@
 import UIKit
 
 protocol VehicleSelectedDelegate: class {
-    func onTaxiSelected() -> ()
-    func onBusSelected() -> ()
-    func onTrainSelected() -> ()
-    func onFerrySelected() -> ()
+    func onTaxiSelected()
+    func onBusSelected()
+    func onTrainSelected()
+    func onFerrySelected()
 }
 
 class VehicleOptionsControl: UIControl {

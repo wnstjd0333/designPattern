@@ -51,7 +51,7 @@ class EstimatesControl: UIControl {
         addSubview(view)
     }
     
-    func configure(withViewModel viewModel: EstimatesViewPresentable) -> (Void) {
+    func configure(withViewModel viewModel: EstimatesViewPresentable) {
         lblVehicleType.text = viewModel.vehicleTypeValue!
         lblVehicleFare.text = viewModel.vehicleFareValue!
         lblEstimatedTime.text = viewModel.estimatedTimeValue!

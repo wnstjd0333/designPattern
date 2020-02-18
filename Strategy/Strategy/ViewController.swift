@@ -27,33 +27,33 @@ class ViewController: UIViewController {
 
 extension ViewController: VehicleSelectedDelegate {
     func onTaxiSelected() {
-        estimateStrategy = TaxiEstimateStrategy.sharedInstance
+        estimateStrategy = FactoryEstimateStrategy.init(.taxi)
         
         updateEstimates(estimateStrategy: estimateStrategy!)
     }
     
     func onBusSelected() {
-        estimateStrategy = BusEstimateStrategy.sharedInstance
-        
+        estimateStrategy = FactoryEstimateStrategy.init(.bus)
+
         updateEstimates(estimateStrategy: estimateStrategy!)
 
     }
     
     func onTrainSelected() {
-        estimateStrategy = TrainEstimateStrategy.sharedInstance
-        
+        estimateStrategy = FactoryEstimateStrategy.init(.train)
+
         updateEstimates(estimateStrategy: estimateStrategy!)
 
     }
     
     func onFerrySelected() {
-         estimateStrategy = FerryEstimateStrategy.sharedInstance
-        
+        estimateStrategy = FactoryEstimateStrategy.init(.ferry)
+
         updateEstimates(estimateStrategy: estimateStrategy!)
 
     }
     
-    func updateEstimates(estimateStrategy: EstimateStrategy) -> (Void){
+    func updateEstimates(estimateStrategy: EstimateStrategy) {
         let estimateModel = estimateStrategy.calculateEstimates()
         
         estimatesViewModel.vehicleTypeValue = estimateModel.vehicleType
