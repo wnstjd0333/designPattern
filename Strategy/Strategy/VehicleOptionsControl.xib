@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VehicleOptionsControl" customModule="Strategy" customModuleProvider="target">
+            <connections>
+                <outlet property="btnBus" destination="vry-K8-Wef" id="gSN-JM-irI"/>
+                <outlet property="btnFerry" destination="Mmo-SE-Mvd" id="Rda-eC-G6V"/>
+                <outlet property="btnTaxi" destination="Gdz-a5-W1F" id="7HA-Lg-kYd"/>
+                <outlet property="btnTrain" destination="3Ft-id-uvv" id="zPC-an-neT"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="h0d-r2-6tp">
+            <rect key="frame" x="0.0" y="0.0" width="350" height="99"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yCb-0B-614">
+                    <rect key="frame" x="16" y="25.5" width="318" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vry-K8-Wef">
+                            <rect key="frame" x="0.0" y="0.0" width="49" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="Bus"/>
+                            <connections>
+                                <action selector="busSelected:" destination="-1" eventType="touchUpInside" id="nEu-6H-rkd"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdz-a5-W1F">
+                            <rect key="frame" x="79" y="0.0" width="51" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="Taxi"/>
+                            <connections>
+                                <action selector="taxiSelected:" destination="-1" eventType="touchUpInside" id="FIo-Md-qhc"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-SE-Mvd">
+                            <rect key="frame" x="160" y="0.0" width="66" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="Ferry"/>
+                            <connections>
+                                <action selector="ferrySelected:" destination="-1" eventType="touchUpInside" id="v9N-j9-L6O"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ft-id-uvv">
+                            <rect key="frame" x="256" y="0.0" width="62" height="48"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <state key="normal" title="Train"/>
+                            <connections>
+                                <action selector="trainSelected:" destination="-1" eventType="touchUpInside" id="Fig-qf-UEH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="yCb-0B-614" firstAttribute="centerX" secondItem="h0d-r2-6tp" secondAttribute="centerX" id="Ik3-HZ-XFa"/>
+                <constraint firstItem="yCb-0B-614" firstAttribute="centerY" secondItem="h0d-r2-6tp" secondAttribute="centerY" id="X9U-7O-D6O"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="f7Z-mh-GIZ"/>
+            <point key="canvasLocation" x="98" y="-173"/>
+        </view>
+    </objects>
+</document>

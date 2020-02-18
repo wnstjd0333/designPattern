@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Strategy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eX1-vh-CvA" customClass="EstimatesControl" customModule="Strategy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="192" width="374" height="373"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="373" id="lfh-z4-o7Y"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ami-i8-O3c" customClass="VehicleOptionsControl" customModule="Strategy" customModuleProvider="target">
+                                <rect key="frame" x="20" y="659" width="374" height="180"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="Gnq-aO-oZx"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FARE ESTIMATE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfj-kG-7vG">
+                                <rect key="frame" x="57.5" y="75" width="299" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="39L-qh-VZ4"/>
+                                    <constraint firstAttribute="width" constant="299" id="uTa-vZ-WGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="27"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pfj-kG-7vG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="09V-WL-E9O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ami-i8-O3c" secondAttribute="bottom" constant="23" id="9ar-el-F9U"/>
+                            <constraint firstItem="ami-i8-O3c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="K0r-Tx-hSd"/>
+                            <constraint firstItem="Pfj-kG-7vG" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MBc-yY-1Cs"/>
+                            <constraint firstItem="eX1-vh-CvA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MWb-m2-1Gd"/>
+                            <constraint firstItem="eX1-vh-CvA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MgG-Gf-9Lw"/>
+                            <constraint firstItem="ami-i8-O3c" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pjg-Qb-Qvc"/>
+                            <constraint firstItem="eX1-vh-CvA" firstAttribute="top" secondItem="Pfj-kG-7vG" secondAttribute="bottom" constant="64" id="esN-FF-I1J"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eX1-vh-CvA" secondAttribute="trailing" constant="20" id="qQA-B6-VFY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ami-i8-O3c" secondAttribute="trailing" constant="20" id="sJg-Fi-h4p"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="estimatesControl" destination="eX1-vh-CvA" id="4vK-xG-6bR"/>
+                        <outlet property="vehicleOptionsControl" destination="ami-i8-O3c" id="A5G-C4-uyv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="101.78571428571428"/>
+        </scene>
+    </scenes>
+</document>
